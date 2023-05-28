@@ -33,6 +33,8 @@ const AppContainer = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
 `;
 
 export default App;
