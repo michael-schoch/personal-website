@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import bandw from "./img/bandw.jpg";
 import color from "./img/color.jpg";
+import leftRight from "./img/left-right-circle.svg";
 
 interface ForegroundProps {
   sliderval: number;
@@ -95,10 +96,10 @@ const Slider = styled.input`
   }
   &::-webkit-slider-thumb {
     appearance: none;
-    width: 6px;
-    height: 100px;
+    width: 64px;
+    height: 64px;
     display: flex;
-    background: white;
+    background-image: url(${leftRight});
     cursor: pointer;
   }
 `;
