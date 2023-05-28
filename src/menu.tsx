@@ -1,18 +1,35 @@
 import styled from "styled-components";
 import logo from "./img/logo.svg";
+import { Routes, Route, Link } from "react-router-dom";
+import { About } from "./about";
+import { Resume } from "./resume";
+import { BackgroundSlider } from "./background-slider";
+import { Contact } from "./contact";
+import { Portfolio } from "./portfolio";
 
 export const Menu = () => {
   return (
-    <Header>
-      <StyledLink href="mike">About Mike</StyledLink>
-      <StyledLink href="resume">Resume</StyledLink>
-      <Title>Michael Schoch</Title>
-      <LogoContainer>
-        <Logo src={logo} />
-      </LogoContainer>
-      <StyledLink href="#">Portfolio</StyledLink>
-      <StyledLink href="#">Contact</StyledLink>
-    </Header>
+    <>
+      <Header>
+        <StyledLink to="about">About Mike</StyledLink>
+        <StyledLink to="resume">Resume</StyledLink>
+        <Title>Michael Schoch</Title>
+        <LogoContainer>
+          <Link to="/">
+            <Logo src={logo} />
+          </Link>
+        </LogoContainer>
+        <StyledLink to="/portfolio">Portfolio</StyledLink>
+        <StyledLink to="/contact">Contact</StyledLink>
+      </Header>
+      <Routes>
+        <Route path="/" element={<BackgroundSlider />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </>
   );
 };
 
@@ -52,7 +69,7 @@ const Title = styled.h1`
   margin: 0 16px;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
   text-align: center;
