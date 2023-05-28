@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { BackgroundSlider } from "./background-slider";
-import { Menu } from "./menu";
+import { Menu } from "./header/menu";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
