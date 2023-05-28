@@ -98,6 +98,7 @@ const Slider = styled.input`
     appearance: none;
     width: 64px;
     height: 64px;
+    border-radius: 32px;
     display: flex;
     background-image: url(${leftRight});
     cursor: pointer;
