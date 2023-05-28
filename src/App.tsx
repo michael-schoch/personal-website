@@ -34,6 +34,7 @@ const AppContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Header = styled.div`
