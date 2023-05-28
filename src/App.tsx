@@ -50,6 +50,7 @@ const Header = styled.div`
 const Title = styled.h1`
   display: flex;
   color: white;
+  margin: 0 16px;
 `;
 
 const Link = styled.a`
