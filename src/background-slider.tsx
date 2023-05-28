@@ -42,8 +42,8 @@ export const BackgroundSlider = () => {
 };
 
 const SliderContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
@@ -101,6 +101,7 @@ const Slider = styled.input`
     border-radius: 32px;
     display: flex;
     background-image: url(${leftRight});
+    background-position: center;
     cursor: pointer;
   }
 `;
