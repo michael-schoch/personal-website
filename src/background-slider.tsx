@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import bandw from "./img/bandw.jpg";
 import color from "./img/color.jpg";
@@ -12,6 +12,10 @@ interface ImgContainerProps {
   img: string;
 }
 
+interface AppConProps {
+  height: string | null;
+}
+
 export const BackgroundSlider = () => {
   const [sliderVal, setSliderVal] = useState(50);
 
@@ -20,8 +24,22 @@ export const BackgroundSlider = () => {
     setSliderVal(evt.target.value);
   };
 
+  const [height, setHeight] = useState<string | null>(null);
+
+  const handleMobileHeight = () => {
+    const deviceWidth = window.matchMedia("(max-width: 1024px)");
+
+    if (deviceWidth.matches) {
+      setHeight(`${window.innerHeight}px`);
+    }
+  };
+
+  useEffect(() => {
+    handleMobileHeight();
+  }, []);
+
   return (
-    <SliderContainer>
+    <SliderContainer height={height}>
       <Background>
         <JobTitle>Software Engineer</JobTitle>
         <ImgContainer img={bandw} />
@@ -41,9 +59,9 @@ export const BackgroundSlider = () => {
   );
 };
 
-const SliderContainer = styled.div`
+const SliderContainer = styled.div<AppConProps>`
   width: 100vw;
-  height: 100vh;
+  height: ${(props) => (props.height !== null ? props.height : "100vh")};
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;

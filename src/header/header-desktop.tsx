@@ -32,7 +32,7 @@ const Header = styled.div`
   padding: 0 32px;
   box-sizing: border-box;
   display: none;
-  @media (min-width: 1068px) {
+  @media (min-width: 1024px) {
     display: flex;
   }
 `;

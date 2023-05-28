@@ -59,10 +59,10 @@ const Header = styled.div`
   width: 100%;
   padding: 0 32px;
   box-sizing: border-box;
-  @media (max-width: 1068px) {
+  @media (max-width: 1024px) {
     display: flex;
   }
-  @media (min-width: 1069px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
