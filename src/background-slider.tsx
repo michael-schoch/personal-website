@@ -10,6 +10,7 @@ interface ForegroundProps {
 
 interface ImgContainerProps {
   img: string;
+  height: string | null;
 }
 
 interface AppConProps {
@@ -20,7 +21,6 @@ export const BackgroundSlider = () => {
   const [sliderVal, setSliderVal] = useState(50);
 
   const handleChange = (evt: any) => {
-    console.log(evt.target.value);
     setSliderVal(evt.target.value);
   };
 
@@ -42,11 +42,11 @@ export const BackgroundSlider = () => {
     <SliderContainer height={height}>
       <Background>
         <JobTitle>Software Engineer</JobTitle>
-        <ImgContainer img={bandw} />
+        <ImgContainer height={height} img={bandw} />
       </Background>
       <Foreground sliderval={sliderVal}>
         <JobTitle>User Experience Designer</JobTitle>
-        <ImgContainer img={color} />
+        <ImgContainer height={height} img={color} />
       </Foreground>
       <Slider
         type="range"
@@ -85,7 +85,7 @@ const ImgContainer = styled.div<ImgContainerProps>`
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: 100vh;
+  height: ${(props) => (props.height !== null ? props.height : "100vh")};
 `;
 
 const JobTitle = styled.div`
