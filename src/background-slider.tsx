@@ -68,7 +68,7 @@ const Float = styled.div`
   width: 200px;
   color: white;
   font-size: 36px;
-  z-index: 1;
+  z-index: -1;
 `;
 
 const Background = styled.div`
@@ -76,7 +76,7 @@ const Background = styled.div`
   top: 0;
   left: 0;
   overflow: hidden;
-  z-index: -1;
+  z-index: -2;
 `;
 
 const Foreground = styled(Background)<ForegroundProps>`
