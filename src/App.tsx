@@ -1,30 +1,16 @@
 import styled from "styled-components";
 import { Menu } from "./header/menu";
 import { BrowserRouter as Router } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { handleMobileHeight } from "./helpers/handle-mobile-height";
 
 interface AppConProps {
   $height: string | null;
 }
 
 function App() {
-  const [height, setHeight] = useState<string | null>(null);
-
-  const handleMobileHeight = () => {
-    const deviceWidth = window.matchMedia("(max-width: 1024px)");
-
-    if (deviceWidth.matches) {
-      setHeight(`${window.innerHeight}px`);
-    }
-  };
-
-  useEffect(() => {
-    handleMobileHeight();
-  }, []);
-
   return (
     <Router>
-      <AppContainer $height={height}>
+      <AppContainer $height={handleMobileHeight()}>
         <Float>I AM A</Float>
         <Menu />
       </AppContainer>

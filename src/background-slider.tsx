@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import bandw from "./img/bandw.jpg";
 import color from "./img/color.jpg";
 import leftRight from "./img/left-right-circle.svg";
+import { handleMobileHeight } from "./helpers/handle-mobile-height";
 
 interface ForegroundProps {
   $sliderVal: number;
@@ -24,29 +25,15 @@ export const BackgroundSlider = () => {
     setSliderVal(evt.target.value);
   };
 
-  const [height, setHeight] = useState<string | null>(null);
-
-  const handleMobileHeight = () => {
-    const deviceWidth = window.matchMedia("(max-width: 1024px)");
-
-    if (deviceWidth.matches) {
-      setHeight(`${window.innerHeight}px`);
-    }
-  };
-
-  useEffect(() => {
-    handleMobileHeight();
-  }, []);
-
   return (
-    <SliderContainer $height={height}>
+    <SliderContainer $height={handleMobileHeight()}>
       <Background>
         <JobTitle>Software Engineer</JobTitle>
-        <ImgContainer $height={height} $img={bandw} />
+        <ImgContainer $height={handleMobileHeight()} $img={bandw} />
       </Background>
       <Foreground $sliderVal={sliderVal}>
         <JobTitle>User Experience Designer</JobTitle>
-        <ImgContainer $height={height} $img={color} />
+        <ImgContainer $height={handleMobileHeight()} $img={color} />
       </Foreground>
       <Slider
         type="range"
