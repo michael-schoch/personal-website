@@ -49,7 +49,7 @@ export const BackgroundSlider = () => {
 
 const SliderContainer = styled.div<AppConProps>`
   width: 100vw;
-  height: ${(props) => props.$height};
+  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
@@ -73,7 +73,7 @@ const ImgContainer = styled.div<ImgContainerProps>`
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: ${(props) => props.$height};
+  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
 `;
 
 const JobTitle = styled.div`
