@@ -13,13 +13,11 @@ function App() {
 }
 
 const AppContainer = styled.div`
-  height: 100vh;
   display: flex;
   width: 100%;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 `;
 
 export default App;

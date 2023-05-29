@@ -1,6 +1,7 @@
 import logo from "../img/logo.svg";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { NAVBAR_HEIGHT, NAVIGATION_HEIGHT } from "../helpers/constants";
 
 export const HeaderDesktop = () => {
   return (
@@ -20,12 +21,12 @@ export const HeaderDesktop = () => {
 };
 
 const Header = styled.div`
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: ${NAVBAR_HEIGHT};
   background-color: #12274a;
   width: 100%;
   padding: 0 32px;
@@ -44,7 +45,7 @@ const Logo = styled.img`
 
 const LogoContainer = styled.div`
   width: 120px;
-  height: 120px;
+  height: ${NAVIGATION_HEIGHT};
   background: #cf1e51;
   display: flex;
   align-items: center;

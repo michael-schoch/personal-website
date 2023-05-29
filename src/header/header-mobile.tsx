@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Menu } from "../img/bars-solid.svg";
 import { useState } from "react";
+import { NAVIGATION_HEIGHT } from "../helpers/constants";
 
 interface MenuDrawerProps {
   $isOpen: boolean;
@@ -49,7 +50,7 @@ export const HeaderMobile = () => {
 };
 
 const Header = styled.div`
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   justify-content: center;
@@ -91,7 +92,7 @@ const Logo = styled.img`
 
 const LogoContainer = styled.div`
   width: 120px;
-  height: 120px;
+  height: ${NAVIGATION_HEIGHT};
   background: #cf1e51;
   display: flex;
   align-items: center;

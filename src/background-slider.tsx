@@ -4,6 +4,7 @@ import bandw from "./img/bandw.jpg";
 import color from "./img/color.jpg";
 import leftRight from "./img/left-right-circle.svg";
 import { handleMobileHeight } from "./helpers/handle-mobile-height";
+import { NAVBAR_HEIGHT } from "./helpers/constants";
 
 interface ForegroundProps {
   $sliderVal: number;
@@ -28,6 +29,7 @@ export const BackgroundSlider = () => {
 
   return (
     <SliderContainer $height={height}>
+      <Float>I AM A</Float>
       <Background>
         <JobTitle>Software Engineer</JobTitle>
         <ImgContainer $height={height} $img={bandw} />
@@ -49,11 +51,24 @@ export const BackgroundSlider = () => {
 
 const SliderContainer = styled.div<AppConProps>`
   width: 100vw;
-  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
+  height: calc(
+    ${(props) => (props.$height !== null ? props.$height : "100vh")} -
+      ${NAVBAR_HEIGHT}
+  );
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
   padding-bottom: 64px;
+`;
+
+const Float = styled.div`
+  position: absolute;
+  top: 55vh;
+  left: 45vw;
+  width: 200px;
+  color: white;
+  font-size: 36px;
+  z-index: 1;
 `;
 
 const Background = styled.div`
