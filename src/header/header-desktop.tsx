@@ -1,21 +1,22 @@
 import logo from "../img/logo.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { NAVBAR_HEIGHT, NAVIGATION_HEIGHT } from "../helpers/constants";
 
 export const HeaderDesktop = () => {
   return (
     <Header>
-      <StyledLink to="about">About Mike</StyledLink>
-      <StyledLink to="resume">Resume</StyledLink>
       <Title>Michael Schoch</Title>
+      <StyledLink to="about">About Mike</StyledLink>
       <LogoContainer>
         <NavLink to="/">
           <Logo src={logo} />
         </NavLink>
       </LogoContainer>
-      <StyledLink to="/portfolio">Portfolio</StyledLink>
-      <StyledLink to="/contact">Contact</StyledLink>
+      <StyledLink to="resume">Resume</StyledLink>
+      <Link to="/contact">
+        <ContactButton>Contact</ContactButton>
+      </Link>
     </Header>
   );
 };
@@ -68,4 +69,16 @@ const StyledLink = styled(NavLink)`
   &.active {
     border-bottom: 2px solid #cf1e51;
   }
+`;
+
+const ContactButton = styled.button`
+  padding: 16px;
+  border: none;
+  color: #ffffff;
+  background-color: #cf1e51;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
 `;

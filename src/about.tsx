@@ -3,6 +3,7 @@ import headshot from "./img/headshot.png";
 import son from "./img/mike-and-miles.jpg";
 import family from "./img/family.jpg";
 import hockey from "./img/hockey.jpg";
+import { Link } from "react-router-dom";
 
 export const About = () => {
   return (
@@ -60,7 +61,9 @@ export const About = () => {
           exciting projects.
         </p>
       </Content>
-      <ContactButton>Contact Me</ContactButton>
+      <Link to="/contact">
+        <ContactButton>Contact Me</ContactButton>
+      </Link>
       <ImageRowContainer>
         <AboutImage src={son} />
         <AboutImage src={family} />
@@ -89,7 +92,7 @@ const Title = styled.h1``;
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 32px 32px 16px;
+  padding: 0 32px 32px 32px;
   width: 50%;
   box-sizing: border-box;
   align-items: center;
@@ -105,6 +108,7 @@ const ContactButton = styled.button`
   color: #ffffff;
   background-color: #cf1e51;
   border-radius: 4px;
+  cursor: pointer;
 `;
 
 const ImageRowContainer = styled.div`

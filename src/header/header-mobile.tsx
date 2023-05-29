@@ -38,9 +38,6 @@ export const HeaderMobile = () => {
         <StyledLink to="resume" onClick={() => handleClose()}>
           Resume
         </StyledLink>
-        <StyledLink to="/portfolio" onClick={() => handleClose()}>
-          Portfolio
-        </StyledLink>
         <StyledLink to="/contact" onClick={() => handleClose()}>
           Contact
         </StyledLink>
