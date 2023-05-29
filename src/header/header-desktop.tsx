@@ -66,6 +66,7 @@ const StyledLink = styled(NavLink)`
   text-align: center;
   margin: 0 16px;
   padding: 8px;
+  width: 82px;
   &.active {
     border-bottom: 2px solid #cf1e51;
   }
