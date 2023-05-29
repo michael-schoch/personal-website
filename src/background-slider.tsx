@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import bandw from "./img/bandw.jpg";
 import color from "./img/color.jpg";
@@ -20,20 +20,21 @@ interface AppConProps {
 
 export const BackgroundSlider = () => {
   const [sliderVal, setSliderVal] = useState(50);
+  const height = handleMobileHeight();
 
   const handleChange = (evt: any) => {
     setSliderVal(evt.target.value);
   };
 
   return (
-    <SliderContainer $height={handleMobileHeight()}>
+    <SliderContainer $height={height}>
       <Background>
         <JobTitle>Software Engineer</JobTitle>
-        <ImgContainer $height={handleMobileHeight()} $img={bandw} />
+        <ImgContainer $height={height} $img={bandw} />
       </Background>
       <Foreground $sliderVal={sliderVal}>
         <JobTitle>User Experience Designer</JobTitle>
-        <ImgContainer $height={handleMobileHeight()} $img={color} />
+        <ImgContainer $height={height} $img={color} />
       </Foreground>
       <Slider
         type="range"
