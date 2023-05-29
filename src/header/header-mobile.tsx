@@ -60,6 +60,7 @@ const Header = styled.div`
   width: 100%;
   padding: 0 32px;
   box-sizing: border-box;
+  z-index: 2;
   @media (max-width: 1024px) {
     display: flex;
   }

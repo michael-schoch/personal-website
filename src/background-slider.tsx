@@ -68,7 +68,6 @@ const Float = styled.div`
   width: 200px;
   color: white;
   font-size: 36px;
-  z-index: -1;
 `;
 
 const Background = styled.div`
