@@ -3,14 +3,12 @@ import { About } from "../about";
 import { Resume } from "../resume";
 import { BackgroundSlider } from "../background-slider";
 import { Contact } from "../contact";
-import { HeaderDesktop } from "./header-desktop";
-import { HeaderMobile } from "./header-mobile";
+import { Header } from "./header";
 
 export const Menu = () => {
   return (
     <>
-      <HeaderDesktop />
-      <HeaderMobile />
+      <Header />
       <Routes>
         <Route path="/" element={<BackgroundSlider />} />
         <Route path="/about" element={<About />} />
