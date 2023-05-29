@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { Routes, Route } from "react-router-dom";
 import { About } from "../about";
 import { Resume } from "../resume";

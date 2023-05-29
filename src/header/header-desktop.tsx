@@ -23,7 +23,6 @@ const Header = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  //   display: flex;
   justify-content: center;
   align-items: center;
   height: 80px;
