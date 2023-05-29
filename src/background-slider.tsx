@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import bandw from "./img/bandw.jpg";
 import color from "./img/color.jpg";
@@ -49,7 +49,7 @@ export const BackgroundSlider = () => {
 
 const SliderContainer = styled.div<AppConProps>`
   width: 100vw;
-  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
+  height: ${(props) => props.$height};
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
@@ -73,7 +73,7 @@ const ImgContainer = styled.div<ImgContainerProps>`
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
+  height: ${(props) => props.$height};
 `;
 
 const JobTitle = styled.div`
