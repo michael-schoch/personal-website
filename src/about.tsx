@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import headshot from "./img/headshot.png";
-import { NAVIGATION_HEIGHT } from "./helpers/constants";
 import son from "./img/mike-and-miles.jpg";
 import family from "./img/family.jpg";
 import hockey from "./img/hockey.jpg";
@@ -8,9 +7,9 @@ import hockey from "./img/hockey.jpg";
 export const About = () => {
   return (
     <AboutContainer>
-      <StyledHeadshot src={headshot} />
-      <Title>About Mike</Title>
       <Content>
+        <StyledHeadshot src={headshot} />
+        <Title>About Mike</Title>
         <p>
           Thanks for visiting my site! My name is Mike Schoch and I am a
           dedicated father, a self-taught software engineer, and a passionate UX
@@ -76,8 +75,7 @@ const AboutContainer = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  // margin-top: ${NAVIGATION_HEIGHT};
-  padding: 32px 32px 0 32px;
+  padding: 32px 0 0 0;
   box-sizing: border-box;
 `;
 
@@ -89,9 +87,12 @@ const StyledHeadshot = styled.img`
 const Title = styled.h1``;
 
 const Content = styled.div`
-  padding: 0 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px 32px 16px;
   width: 50%;
   box-sizing: border-box;
+  align-items: center;
 
   @media screen and (max-width: 1024px) {
     width: 100%;
@@ -109,6 +110,8 @@ const ContactButton = styled.button`
 const ImageRowContainer = styled.div`
   display: flex;
   padding-top: 32px;
+  width: 100%;
+  overflow: hidden;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
     padding: 32px;
@@ -116,7 +119,9 @@ const ImageRowContainer = styled.div`
 `;
 
 const AboutImage = styled.img`
+  width: 100%;
+  min-width: 10%;
   @media screen and (max-width: 1024px) {
-    padding: 16px;
+    padding: 16px 0;
   }
 `;
