@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 interface AppConProps {
-  height: string | null;
+  $height: string | null;
 }
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      <AppContainer height={height}>
+      <AppContainer $height={height}>
         <Float>I AM A</Float>
         <Menu />
       </AppContainer>
@@ -43,7 +43,7 @@ const Float = styled.div`
 `;
 
 const AppContainer = styled.div<AppConProps>`
-  height: ${(props) => (props.height !== null ? props.height : "100vh")};
+  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
   display: flex;
   width: 100%;
   justify-content: center;

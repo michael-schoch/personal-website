@@ -5,7 +5,7 @@ import { ReactComponent as Menu } from "../img/bars-solid.svg";
 import { useState } from "react";
 
 interface MenuDrawerProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 export const HeaderMobile = () => {
@@ -23,11 +23,11 @@ export const HeaderMobile = () => {
     <Header>
       <StyledMenu onClick={() => handleMenuOpen()} />
       <LogoContainer>
-        <NavLink to="/">
+        <NavLink to="/" onClick={() => handleClose()}>
           <Logo src={logo} />
         </NavLink>
       </LogoContainer>
-      <MenuDrawer isOpen={open}>
+      <MenuDrawer $isOpen={open}>
         <StyledLink to="/" onClick={() => handleClose()}>
           Home
         </StyledLink>
@@ -74,7 +74,7 @@ const MenuDrawer = styled.div<MenuDrawerProps>`
   position: absolute;
   top: 0;
   left: 0;
-  width: ${(props) => (props.isOpen ? "100vw" : "0")};
+  width: ${(props) => (props.$isOpen ? "100vw" : "0")};
   height: 100vh;
   background-color: #12274a;
   transition: width 0.5s;
@@ -98,12 +98,6 @@ const LogoContainer = styled.div`
   justify-content: center;
   border-radius: 0 0 10px 10px;
   z-index: 2;
-`;
-
-const Title = styled.h1`
-  display: none;
-  color: white;
-  margin: 0 16px;
 `;
 
 const StyledLink = styled(NavLink)`

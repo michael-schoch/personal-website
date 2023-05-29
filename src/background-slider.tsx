@@ -5,16 +5,16 @@ import color from "./img/color.jpg";
 import leftRight from "./img/left-right-circle.svg";
 
 interface ForegroundProps {
-  sliderval: number;
+  $sliderVal: number;
 }
 
 interface ImgContainerProps {
-  img: string;
-  height: string | null;
+  $img: string;
+  $height: string | null;
 }
 
 interface AppConProps {
-  height: string | null;
+  $height: string | null;
 }
 
 export const BackgroundSlider = () => {
@@ -39,14 +39,14 @@ export const BackgroundSlider = () => {
   }, []);
 
   return (
-    <SliderContainer height={height}>
+    <SliderContainer $height={height}>
       <Background>
         <JobTitle>Software Engineer</JobTitle>
-        <ImgContainer height={height} img={bandw} />
+        <ImgContainer $height={height} $img={bandw} />
       </Background>
-      <Foreground sliderval={sliderVal}>
+      <Foreground $sliderVal={sliderVal}>
         <JobTitle>User Experience Designer</JobTitle>
-        <ImgContainer height={height} img={color} />
+        <ImgContainer $height={height} $img={color} />
       </Foreground>
       <Slider
         type="range"
@@ -61,11 +61,11 @@ export const BackgroundSlider = () => {
 
 const SliderContainer = styled.div<AppConProps>`
   width: 100vw;
-  height: ${(props) => (props.height !== null ? props.height : "100vh")};
+  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
   display: flex;
   align-items: flex-end;
   box-sizing: border-box;
-  padding-bottom: 100px;
+  padding-bottom: 64px;
 `;
 
 const Background = styled.div`
@@ -77,15 +77,15 @@ const Background = styled.div`
 `;
 
 const Foreground = styled(Background)<ForegroundProps>`
-  width: ${(props) => props.sliderval}%;
+  width: ${(props) => props.$sliderVal}%;
 `;
 
 const ImgContainer = styled.div<ImgContainerProps>`
-  background-image: url(${(props) => props.img});
+  background-image: url(${(props) => props.$img});
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: ${(props) => (props.height !== null ? props.height : "100vh")};
+  height: ${(props) => (props.$height !== null ? props.$height : "100vh")};
 `;
 
 const JobTitle = styled.div`
