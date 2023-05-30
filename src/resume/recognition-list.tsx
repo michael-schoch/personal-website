@@ -15,4 +15,5 @@ export const RecognitionList = () => {
 
 const StyledUL = styled.ul`
   margin: 16px;
+  padding-left: 12px;
 `;

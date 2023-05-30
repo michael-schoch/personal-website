@@ -164,4 +164,6 @@ const StyledMinus = styled(Minus)`
 const CollapsableContent = styled.div<CollapsableSectionProps>`
   display: ${(props) => (props.$isOpen ? "flex" : "none")};
   flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 `;

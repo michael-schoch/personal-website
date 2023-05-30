@@ -31,7 +31,7 @@ const Container = styled.div`
   margin: 16px;
 `;
 
-const Company = styled.h4`
+const Company = styled.h3`
   margin: 0;
 `;
 

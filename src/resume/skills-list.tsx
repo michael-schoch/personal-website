@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SkillsList = () => {
   return (
-    <>
+    <Container>
       <SkillsSubHead>Software Development</SkillsSubHead>
       <SkillsContent>
         <ul>
@@ -46,12 +46,18 @@ export const SkillsList = () => {
           <li>Presentation & Client Interaction</li>
         </ul>
       </SkillsContent>
-    </>
+    </Container>
   );
 };
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+`;
+
 const SkillsSubHead = styled.h3`
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 const SkillsContent = styled.div`
