@@ -36,4 +36,5 @@ const Dates = styled.div`
 const Content = styled.ul`
   margin: 0;
   font-size: 14px;
+  padding-left: 12px;
 `;
