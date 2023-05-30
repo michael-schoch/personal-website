@@ -1,24 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.3ae60610.js",
+    "main.js": "/static/js/main.9a913895.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/color.jpg": "/static/media/color.5fd4b9d2c6adb109aebf.jpg",
     "static/media/headshot.png": "/static/media/headshot.72b3db5bcb5c23f1aab7.png",
     "static/media/bandw.jpg": "/static/media/bandw.9ca5f008608d5658ecc9.jpg",
     "static/media/family.jpg": "/static/media/family.13be4d199f5b15e03377.jpg",
+    "static/media/hockey.jpg": "/static/media/hockey.7c39360e93263756c655.jpg",
     "static/media/mike-and-miles.jpg": "/static/media/mike-and-miles.d841cbde47e9a2e34d9c.jpg",
-    "static/media/hockey.jpg": "/static/media/hockey.4ef8434885a4e2d2f89d.jpg",
     "static/media/logo.svg": "/static/media/logo.c0ae0e37176dd9c757957333ce0a426a.svg",
     "static/media/left-right-circle.svg": "/static/media/left-right-circle.1c5d5dceae68306003a3c3cab8a25949.svg",
     "index.html": "/index.html",
     "static/media/bars-solid.svg": "/static/media/bars-solid.dd92aed316c5967acbf1f7094cd87de4.svg",
+    "static/media/plus-solid.svg": "/static/media/plus-solid.c4ad914c4a4c568589ae272f9f4b07bf.svg",
+    "static/media/minus-solid.svg": "/static/media/minus-solid.71e03d0391038c95d4d667bd03c6bae0.svg",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.3ae60610.js.map": "/static/js/main.3ae60610.js.map",
+    "main.9a913895.js.map": "/static/js/main.9a913895.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.3ae60610.js"
+    "static/js/main.9a913895.js"
   ]
 }
