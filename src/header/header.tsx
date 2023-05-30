@@ -39,7 +39,7 @@ export const Header = () => {
           About Mike
         </StyledLink>
         <StyledLink to="resume" onClick={() => handleClose()}>
-          Resume
+          Résumé
         </StyledLink>
         <StyledLink to="/contact" onClick={() => handleClose()}>
           Contact

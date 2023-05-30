@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { About } from "../about";
-import { Resume } from "../resume";
+import { Resume } from "../resume/resume";
 import { BackgroundSlider } from "../background-slider";
 import { Contact } from "../contact";
 import { Header } from "./header";

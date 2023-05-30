@@ -1,11 +1,21 @@
-import styled, { css, keyframes } from "styled-components";
-import { ReactComponent as Plus } from "./img/plus-solid.svg";
-import { ReactComponent as Minus } from "./img/minus-solid.svg";
+import styled from "styled-components";
+import { ReactComponent as Plus } from "../img/plus-solid.svg";
+import { ReactComponent as Minus } from "../img/minus-solid.svg";
 import { useState } from "react";
+import { ExperienceList } from "./experience-list";
+import { SkillsList } from "./skills-list";
+import { NAVBAR_HEIGHT } from "../helpers/constants";
+import { RecognitionList } from "./recognition-list";
+import { Education } from "./education";
 
 interface CollapsableSectionProps {
   $isOpen: boolean;
 }
+
+const SKILL = "skill";
+const EXPERIENCE = "exp";
+const RECOGNITION = "recog";
+const EDUCATION = "edu";
 
 export const Resume = () => {
   const [skillsOpen, setSkillsOpen] = useState(true);
@@ -14,100 +24,109 @@ export const Resume = () => {
   const [eduOpen, setEduOpen] = useState(true);
 
   const handleSectionClick = (str: string) => {
-    if (str === "skill") {
-      setSkillsOpen(!skillsOpen);
-    }
-    if (str === "exp") {
-      setExpOpen(!expOpen);
-    }
-    if (str === "recog") {
-      setRecogOpen(!recogOpen);
-    }
-    if (str === "edu") {
-      setEduOpen(!eduOpen);
+    switch (str) {
+      case SKILL:
+        setSkillsOpen(!skillsOpen);
+        break;
+      case EXPERIENCE:
+        setExpOpen(!expOpen);
+        break;
+      case RECOGNITION:
+        setRecogOpen(!recogOpen);
+        break;
+      case EDUCATION:
+        setEduOpen(!eduOpen);
+        break;
+      default:
+        break;
     }
   };
 
   return (
-    <PortfolioContainer>
-      <SidePanel></SidePanel>
+    <ResumeContainer>
+      <ScrollHide />
       <CollapsableSection>
         <SecHeader>
           <SectionTitle>Skills</SectionTitle>
           {skillsOpen ? (
-            <StyledMinus onClick={() => handleSectionClick("skill")} />
+            <StyledMinus onClick={() => handleSectionClick(SKILL)} />
           ) : (
-            <StyledPlus onClick={() => handleSectionClick("skill")} />
+            <StyledPlus onClick={() => handleSectionClick(SKILL)} />
           )}
         </SecHeader>
         <CollapsableContent $isOpen={skillsOpen}>
-          JavaScript TypeScript React HTML/CSS CSS in JS Storybook PostgreSQL
-          Node Webpack Redux
+          <SkillsList />
         </CollapsableContent>
       </CollapsableSection>
       <CollapsableSection>
         <SecHeader>
           <SectionTitle>Experience</SectionTitle>
           {expOpen ? (
-            <StyledMinus onClick={() => handleSectionClick("exp")} />
+            <StyledMinus onClick={() => handleSectionClick(EXPERIENCE)} />
           ) : (
-            <StyledPlus onClick={() => handleSectionClick("exp")} />
+            <StyledPlus onClick={() => handleSectionClick(EXPERIENCE)} />
           )}
         </SecHeader>
         <CollapsableContent $isOpen={expOpen}>
-          JavaScript TypeScript React HTML/CSS CSS in JS Storybook PostgreSQL
-          Node Webpack Redux
+          <ExperienceList />
         </CollapsableContent>
       </CollapsableSection>
       <CollapsableSection>
         <SecHeader>
           <SectionTitle>Recognition</SectionTitle>
           {recogOpen ? (
-            <StyledMinus onClick={() => handleSectionClick("recog")} />
+            <StyledMinus onClick={() => handleSectionClick(RECOGNITION)} />
           ) : (
-            <StyledPlus onClick={() => handleSectionClick("recog")} />
+            <StyledPlus onClick={() => handleSectionClick(RECOGNITION)} />
           )}
         </SecHeader>
         <CollapsableContent $isOpen={recogOpen}>
-          JavaScript TypeScript React HTML/CSS CSS in JS Storybook PostgreSQL
-          Node Webpack Redux
+          <RecognitionList />
         </CollapsableContent>
       </CollapsableSection>
       <CollapsableSection>
         <SecHeader>
           <SectionTitle>Education</SectionTitle>
           {eduOpen ? (
-            <StyledMinus onClick={() => handleSectionClick("edu")} />
+            <StyledMinus onClick={() => handleSectionClick(EDUCATION)} />
           ) : (
-            <StyledPlus onClick={() => handleSectionClick("edu")} />
+            <StyledPlus onClick={() => handleSectionClick(EDUCATION)} />
           )}
         </SecHeader>
         <CollapsableContent $isOpen={eduOpen}>
-          JavaScript TypeScript React HTML/CSS CSS in JS Storybook PostgreSQL
-          Node Webpack Redux
+          <Education />
         </CollapsableContent>
       </CollapsableSection>
-    </PortfolioContainer>
+    </ResumeContainer>
   );
 };
 
-const PortfolioContainer = styled.div`
+const ResumeContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding: 32px 0 0 0;
+  padding: 40px 0 0 0;
   box-sizing: border-box;
 `;
 
-const SidePanel = styled.div``;
+const ScrollHide = styled.div`
+  background-color: #ffffff;
+  height: 40px;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  position: fixed;
+  top: ${NAVBAR_HEIGHT};
+`;
 
 const CollapsableSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  max-width: 800px;
 `;
 
 const SecHeader = styled.div`
@@ -118,12 +137,12 @@ const SecHeader = styled.div`
   background-color: #12274a;
   justify-content: space-between;
   margin-bottom: 1px;
-  postion: relative;
+  position: sticky;
+  top: 120px;
 `;
 
 const SectionTitle = styled.h2`
   width: 100%;
-  max-width: 800px;
   padding: 16px;
   color: white;
   margin: 0;
@@ -143,6 +162,6 @@ const StyledMinus = styled(Minus)`
 `;
 
 const CollapsableContent = styled.div<CollapsableSectionProps>`
-  display: ${(props) => (props.$isOpen ? "block" : "none")};
-  // transition: height 0.5s;
+  display: ${(props) => (props.$isOpen ? "flex" : "none")};
+  flex-direction: column;
 `;
