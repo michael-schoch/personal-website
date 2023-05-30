@@ -118,7 +118,7 @@ const ImageRowContainer = styled.div`
   overflow: hidden;
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    padding: 32px;
+    padding-top: 32px;
   }
 `;
 
