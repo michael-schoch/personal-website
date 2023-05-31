@@ -29,7 +29,7 @@ export const Contact = () => {
           href="https://github.com/mschoch62"
           target="_blank"
           rel="noreferrer"
-          style={{ marginRight: "16px" }}
+          style={{ marginRight: "16px", textDecoration: "none" }}
         >
           <LinkButton>
             <GitHub
@@ -42,6 +42,7 @@ export const Contact = () => {
           href="https://www.linkedin.com/in/michaelschoch/"
           target="_blank"
           rel="noreferrer"
+          style={{ textDecoration: "none" }}
         >
           <LinkButton>
             <LinkedIn

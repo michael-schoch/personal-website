@@ -45,6 +45,7 @@ export const Resume = () => {
   return (
     <ResumeContainer>
       <ScrollHide />
+      <Title>Résumé</Title>
       <CollapsableSection>
         <SecHeader>
           <SectionTitle>Skills</SectionTitle>
@@ -119,6 +120,10 @@ const ScrollHide = styled.div`
   display: flex;
   position: fixed;
   top: ${NAVBAR_HEIGHT};
+`;
+
+const Title = styled.h1`
+  margin-top: 0;
 `;
 
 const CollapsableSection = styled.div`
