@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { Menu } from "./header/menu";
 import { BrowserRouter as Router } from "react-router-dom";
+import ScrollToTop from "./helpers/scroll-to-top";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AppContainer>
         <Menu />
       </AppContainer>
