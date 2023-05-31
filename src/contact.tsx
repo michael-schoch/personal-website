@@ -8,8 +8,6 @@ export const Contact = () => {
   const [state, handleSubmit] = useForm("mlekkyll");
   const [showSuccess, setShowSuccess] = useState(false);
 
-  console.log(state);
-
   useEffect(() => {
     if (state.succeeded) {
       setShowSuccess(true);
