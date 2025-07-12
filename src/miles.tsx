@@ -1,16 +1,66 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export const Miles = () => {
-  const [value, setValue] = useState(0);
+  const [acctValue, setAcctValue] = useState(0);
+
+  useEffect(() => {
+    const fetchInitialValue = async () => {
+      const initialValue = await getValue();
+      setAcctValue(initialValue);
+    };
+    fetchInitialValue();
+  }, []);
 
   const addAmount = (amount: number) => {
-    setValue((prev) => parseFloat((prev + amount).toFixed(2)));
+    setAcctValue((prev) => parseFloat((prev + amount).toFixed(2)));
+  };
+
+  const getValue = async () => {
+    let url =
+      "https://api.sheety.co/e136c85b342e8e3e4e20e044dd311ad1/milesAccount/sheet1";
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      setAcctValue(json.sheet1[0].value);
+      return json.sheet1[0].value;
+    } catch (error) {
+      console.error("Error fetching value:", error);
+      return 0;
+    }
+  };
+
+  const setAcct = async () => {
+    let url =
+      "https://api.sheety.co/e136c85b342e8e3e4e20e044dd311ad1/milesAccount/sheet1/2";
+    try {
+      await fetch(url, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sheet1: {
+            value: acctValue,
+          },
+        }),
+      }).then((res) => {
+        console.log("Response status:", res);
+      });
+      alert("Value submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting value:", error);
+      alert("Failed to submit value.");
+    }
   };
 
   return (
     <Container>
-      <CenteredLargeNumber>${value.toFixed(2)}</CenteredLargeNumber>
+      <CenteredLargeNumber>
+        ${acctValue.toFixed(2)}
+        <FlexContainer>
+          <StyledButton onClick={getValue}>Refresh</StyledButton>
+          <StyledButton onClick={setAcct}>Submit</StyledButton>
+        </FlexContainer>
+      </CenteredLargeNumber>
       <FlexContainer>
         <StyledButton onClick={() => addAmount(0.25)}>Add $0.25</StyledButton>
         <StyledButton onClick={() => addAmount(0.5)}>Add $0.50</StyledButton>
@@ -21,8 +71,8 @@ export const Miles = () => {
         <BarGraphTitle>Progress Tracker</BarGraphTitle>
         <BarGraphRow>
           <BarGraph>
-            <BarFill percentage={(value / 7) * 100} />
-            <BarLabel>${value.toFixed(2)} / $7.00</BarLabel>
+            <BarFill percentage={(acctValue / 7) * 100} />
+            <BarLabel>${acctValue.toFixed(2)} / $7.00</BarLabel>
           </BarGraph>
           <CarContainer>
             <CarIcon>🚗</CarIcon>
