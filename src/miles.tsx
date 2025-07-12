@@ -58,7 +58,7 @@ export const Miles = () => {
         ${acctValue.toFixed(2)}
         <FlexContainer>
           <StyledButton onClick={getValue}>Refresh</StyledButton>
-          <StyledButton onClick={setAcct}>Deposit</StyledButton>
+          <StyledButton onClick={setAcct}>Submit</StyledButton>
         </FlexContainer>
       </CenteredLargeNumber>
       <FlexContainer>
