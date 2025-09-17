@@ -4,7 +4,7 @@ type ExperienceTileProps = {
   company: string;
   dateRange: string;
   jobTitle: string;
-  content: string;
+  content: string | JSX.Element;
 };
 
 export const ExperienceTile = ({

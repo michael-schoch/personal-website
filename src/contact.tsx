@@ -26,7 +26,7 @@ export const Contact = () => {
       </Content>
       <LinksRow>
         <a
-          href="https://github.com/mschoch62"
+          href="https://github.com/michael-schoch"
           target="_blank"
           rel="noreferrer"
           style={{ marginRight: "16px", textDecoration: "none" }}

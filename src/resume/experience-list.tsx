@@ -5,6 +5,38 @@ export const ExperienceList = () => {
   return (
     <Container>
       <ExperienceTile
+        company="Mastery Logistics"
+        dateRange="May 2023 - September 2025"
+        jobTitle="Senior Software Engineer"
+        content={
+          <>
+            Impacted the entire stack of the application, beginning as a
+            front-end platform dev and moving to a back-end/fullstack position
+            when an opportunity arose.
+            <br />
+            <br />
+            As a senior member of the front-end platform team at Mastery, my
+            responsibilities included overseeing the front-end production
+            deployment pipeline and managing our custom component library.
+            Additionally, I provided support to developers contributing to the
+            front-end. Within six months of joining Mastery, I was invited to
+            speak at the 2023 internal conference, where I shared insights on
+            front-end patterns and discussed the development of an adaptable
+            component library to meet the company's dynamic needs. I played a
+            key role in educating younger developers and ensuring the quality of
+            code in our front-end repository.
+            <br />
+            <br />I then had the opportunity to transition to the new ETA
+            service team, where I had been working with Kafka to consume and
+            manipulate data across 50+ services to determine locations of trucks
+            and cargo all over the continent. While on this team I wrote several
+            ADRs, planning out changes that would be implemented over several
+            months, as well as improving our services efficiency and throughput
+            consuming and producing millions of messages daily.
+          </>
+        }
+      />
+      <ExperienceTile
         company="Pluralsight"
         dateRange="February 2022 - May 2023"
         jobTitle="Software Engineer - Tech Lead"
